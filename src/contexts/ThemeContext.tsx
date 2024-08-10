@@ -61,6 +61,8 @@ export function ThemeProvider({
     //     },
     //       }}>
     <Theme
+      //   hasBackground
+      appearance={"dark"}
       accentColor="teal"
       grayColor="slate"
       className="radix-themes-custom-fonts">

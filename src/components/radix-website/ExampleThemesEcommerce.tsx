@@ -16,7 +16,7 @@ import {
   TextArea,
   TextField,
   Theme,
-} from '@radix-ui/themes';
+} from "@radix-ui/themes";
 import {
   BookmarkFilledIcon,
   BookmarkIcon,
@@ -34,18 +34,22 @@ import {
   TextAlignLeftIcon,
   TextAlignRightIcon,
   VideoIcon,
-} from '@radix-ui/react-icons';
-import { Label } from '@radix-ui/react-label';
-import * as React from 'react';
-import * as ToggleGroup from '@radix-ui/react-toggle-group';
+} from "@radix-ui/react-icons";
+import { Label } from "@radix-ui/react-label";
+import * as React from "react";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 
 type ExampleLayoutProps = React.ComponentPropsWithoutRef<typeof Flex> & {
   focusable?: boolean;
 };
 
-export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLayoutProps) => {
+export const ExampleThemesEcommerce = ({
+  focusable = true,
+  ...props
+}: ExampleLayoutProps) => {
   // We’ll use a different portal container for homepage demo purposes; this is usually not needed.
-  const [portalContainer, setPortalContainer] = React.useState<HTMLDivElement>(null);
+  const [portalContainer, setPortalContainer] =
+    React.useState<HTMLDivElement>(null);
 
   // Interactive elements may be not focusable for homepage demo purposes
   const tabIndex = focusable ? undefined : -1;
@@ -54,12 +58,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
   const [state, setState] = React.useState({
     sneakersBookmarked: false,
     jeansBookmarked: false,
-    delivery: '',
-    size: '9',
-    material: '',
-    color: '',
-    productMaterial: '',
-    productColor: '',
+    delivery: "",
+    size: "9",
+    material: "",
+    color: "",
+    productMaterial: "",
+    productColor: "",
     productSizes: [],
   });
 
@@ -72,7 +76,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=424&q=80"
               width="280"
               height="212"
-              style={{ borderRadius: 'var(--radius-1)' }}
+              style={{ borderRadius: "var(--radius-1)" }}
             />
           </Flex>
 
@@ -86,8 +90,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 weight="bold"
                 highContrast
                 tabIndex={tabIndex}
-                onClick={(e) => e.preventDefault()}
-              >
+                onClick={(e) => e.preventDefault()}>
                 Back to basics
               </Link>
               <Text size="2" color="gray" as="p">
@@ -95,7 +98,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               </Text>
             </Box>
             <Box flexShrink="0">
-              <Button tabIndex={tabIndex} size="2" variant="soft" color="gray" highContrast>
+              <Button
+                tabIndex={tabIndex}
+                size="2"
+                variant="soft"
+                color="gray"
+                highContrast>
                 Shop now
               </Button>
             </Box>
@@ -108,7 +116,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               width="280"
               height="270"
               src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=540&q=80"
-              style={{ borderRadius: 'var(--radius-1)' }}
+              style={{ borderRadius: "var(--radius-1)" }}
             />
 
             <Theme appearance="light" asChild>
@@ -120,9 +128,8 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 right="0"
                 width="32px"
                 height="32px"
-                style={{ borderRadius: 'var(--radius-3)' }}
-                m="2"
-              >
+                style={{ borderRadius: "var(--radius-3)" }}
+                m="2">
                 <IconButton
                   size="2"
                   tabIndex={tabIndex}
@@ -134,9 +141,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                       ...currentState,
                       sneakersBookmarked: !currentState.sneakersBookmarked,
                     }))
-                  }
-                >
-                  {state.sneakersBookmarked ? <BookmarkFilledIcon /> : <BookmarkIcon />}
+                  }>
+                  {state.sneakersBookmarked ? (
+                    <BookmarkFilledIcon />
+                  ) : (
+                    <BookmarkIcon />
+                  )}
                 </IconButton>
               </Flex>
             </Theme>
@@ -152,8 +162,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   color="gray"
                   highContrast
                   tabIndex={tabIndex}
-                  onClick={(e) => e.preventDefault()}
-                >
+                  onClick={(e) => e.preventDefault()}>
                   Footwear
                 </Link>
               </Flex>
@@ -169,7 +178,8 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
           </Flex>
 
           <Text as="p" size="2" color="gray" mb="4">
-            Love at the first sight for enthusiasts seeking a fresh and whimsical style.
+            Love at the first sight for enthusiasts seeking a fresh and
+            whimsical style.
           </Text>
 
           <Box>
@@ -186,7 +196,10 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
               <Select.Root defaultValue="Pastel" size="2">
                 <Select.Trigger tabIndex={tabIndex} variant="soft" />
-                <Select.Content variant="soft" container={portalContainer} position="popper">
+                <Select.Content
+                  variant="soft"
+                  container={portalContainer}
+                  position="popper">
                   <Select.Item value="Pastel">Pastel</Select.Item>
                   <Select.Item value="Bright">Bright</Select.Item>
                 </Select.Content>
@@ -201,7 +214,10 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               </Label>
               <Select.Root defaultValue="8" size="2">
                 <Select.Trigger tabIndex={tabIndex} variant="soft" />
-                <Select.Content variant="soft" container={portalContainer} position="popper">
+                <Select.Content
+                  variant="soft"
+                  container={portalContainer}
+                  position="popper">
                   {Array.from({ length: 12 }, (_, i) => (
                     <Select.Item key={i} value={String(i * 0.5 + 5)}>
                       {i * 0.5 + 5}
@@ -211,7 +227,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               </Select.Root>
             </Flex>
 
-            <Button tabIndex={tabIndex} size="2" variant="solid" color="gray" highContrast>
+            <Button
+              tabIndex={tabIndex}
+              size="2"
+              variant="solid"
+              color="gray"
+              highContrast>
               Buy
             </Button>
           </Flex>
@@ -227,9 +248,11 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 <ToggleButtons
                   type="single"
                   tabIndex={tabIndex}
-                  values={['Tomorrow', 'Within 3 days']}
+                  values={["Tomorrow", "Within 3 days"]}
                   value={state.delivery}
-                  onValueChange={(value) => setState({ ...state, delivery: value })}
+                  onValueChange={(value) =>
+                    setState({ ...state, delivery: value })
+                  }
                 />
               </Grid>
             </Box>
@@ -242,7 +265,18 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 <ToggleButtons
                   type="single"
                   tabIndex={tabIndex}
-                  values={['5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10']}
+                  values={[
+                    "5.5",
+                    "6",
+                    "6.5",
+                    "7",
+                    "7.5",
+                    "8",
+                    "8.5",
+                    "9",
+                    "9.5",
+                    "10",
+                  ]}
                   value={state.size}
                   onValueChange={(value) => setState({ ...state, size: value })}
                 />
@@ -258,9 +292,11 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 <ToggleButtons
                   type="single"
                   tabIndex={tabIndex}
-                  values={['Leather', 'Suede', 'Mesh', 'Canvas']}
+                  values={["Leather", "Suede", "Mesh", "Canvas"]}
                   value={state.material}
-                  onValueChange={(value) => setState({ ...state, material: value })}
+                  onValueChange={(value) =>
+                    setState({ ...state, material: value })
+                  }
                 />
               </Grid>
             </Box>
@@ -275,19 +311,20 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   type="single"
                   tabIndex={tabIndex}
                   values={[
-                    'White',
-                    'Gray',
-                    'Black',
-                    'Red',
-                    'Pink',
-                    'Violet',
-                    'Blue',
-                    'Green',
-                    'Beige',
+                    "White",
+                    "Gray",
+                    "Black",
+                    "Red",
+                    "Pink",
+                    "Violet",
+                    "Blue",
+                    "Green",
+                    "Beige",
                   ]}
                   value={state.color}
-                  onValueChange={(value) => setState({ ...state, color: value })}
-                >
+                  onValueChange={(value) =>
+                    setState({ ...state, color: value })
+                  }>
                   {(value) => (
                     <React.Fragment>
                       <Box
@@ -296,18 +333,18 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                         height="16px"
                         style={{
                           background: {
-                            White: 'white',
-                            Gray: 'var(--gray-9)',
-                            Black: '#1B1B18',
-                            Red: 'var(--red-9)',
-                            Pink: 'var(--pink-8)',
-                            Violet: 'var(--violet-9)',
-                            Blue: 'var(--blue-9)',
-                            Green: 'var(--teal-9)',
-                            Beige: '#E5DFCF',
+                            White: "white",
+                            Gray: "var(--gray-9)",
+                            Black: "#1B1B18",
+                            Red: "var(--red-9)",
+                            Pink: "var(--pink-8)",
+                            Violet: "var(--violet-9)",
+                            Blue: "var(--blue-9)",
+                            Green: "var(--teal-9)",
+                            Beige: "#E5DFCF",
                           }[value],
-                          borderRadius: 'var(--radius-1)',
-                          boxShadow: 'inset 0 0 0 1px rgba(160, 160, 160, 0.4)',
+                          borderRadius: "var(--radius-1)",
+                          boxShadow: "inset 0 0 0 1px rgba(160, 160, 160, 0.4)",
                         }}
                       />
                       {value}
@@ -316,102 +353,6 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 </ToggleButtons>
               </Grid>
             </Box>
-          </Flex>
-        </Card>
-
-        <Card size="1">
-          <Heading as="h3" size="3" mb="3">
-            Shopping cart
-          </Heading>
-
-          <Flex direction="column" gap="3">
-            {[
-              {
-                name: 'Poncho #4',
-                url:
-                  'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&h=80&q=80&crop=entropy',
-                caption: 'Size M',
-                count: '1',
-                price: '$79',
-              },
-              {
-                name: 'Jeans #8',
-                url:
-                  'https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&h=80&q=80&crop=entropy',
-                caption: 'Size 30',
-                count: '2',
-                price: '$118',
-              },
-              {
-                name: 'Sneakers #14',
-                url:
-                  'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&h=80&q=80&crop=center',
-                caption: 'Size 8',
-                count: '1',
-                price: '$116',
-              },
-            ].map((item) => (
-              <Flex gap="4" align="center" justify="between" key={item.url}>
-                <Flex flexGrow="1" align="center" gap="2" height="32px">
-                  <img
-                    src={item.url}
-                    style={{ borderRadius: 'var(--radius-1)' }}
-                    width="32"
-                    height="32"
-                  />
-                  <Box>
-                    <Text as="div" color="gray" trim="start">
-                      <Link
-                        href="#"
-                        underline="hover"
-                        tabIndex={tabIndex}
-                        size="2"
-                        weight="bold"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        {item.name}
-                      </Link>
-                    </Text>
-                    <Text as="div" color="gray" size="1" trim="end">
-                      {item.caption}
-                    </Text>
-                  </Box>
-                </Flex>
-
-                <Flex direction="column" width="48px">
-                  <Select.Root defaultValue={item.count} size="1">
-                    <Select.Trigger tabIndex={tabIndex} />
-                    <Select.Content variant="soft" container={portalContainer} position="popper">
-                      {Array.from({ length: 9 }, (_, i) => (
-                        <Select.Item key={i} value={String(i + 1)}>
-                          {i + 1}
-                        </Select.Item>
-                      ))}
-                    </Select.Content>
-                  </Select.Root>
-                </Flex>
-
-                <Flex direction="column" width="40px">
-                  <Text size="2" weight="bold" align="right">
-                    {item.price}
-                  </Text>
-                </Flex>
-              </Flex>
-            ))}
-          </Flex>
-
-          <Box>
-            <Separator size="4" my="4" />
-          </Box>
-
-          <Flex align="center" justify="between" mt="4">
-            <Text size="2">
-              Total <Strong>$313</Strong>
-            </Text>
-
-            <Button tabIndex={tabIndex} size="2" variant="solid" color="gray" highContrast>
-              Go to checkout
-            </Button>
           </Flex>
         </Card>
       </Flex>
@@ -423,7 +364,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               width="280"
               height="270"
               src="https://images.unsplash.com/photo-1577210897949-1f56f943bf82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=540&q=80&crop=bottom"
-              style={{ borderRadius: 'var(--radius-1)' }}
+              style={{ borderRadius: "var(--radius-1)" }}
             />
 
             <Theme appearance="light" asChild>
@@ -435,9 +376,8 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 right="0"
                 width="32px"
                 height="32px"
-                style={{ borderRadius: 'var(--radius-3)' }}
-                m="2"
-              >
+                style={{ borderRadius: "var(--radius-3)" }}
+                m="2">
                 <IconButton
                   size="2"
                   tabIndex={tabIndex}
@@ -449,9 +389,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                       ...currentState,
                       jeansBookmarked: !currentState.jeansBookmarked,
                     }))
-                  }
-                >
-                  {state.jeansBookmarked ? <BookmarkFilledIcon /> : <BookmarkIcon />}
+                  }>
+                  {state.jeansBookmarked ? (
+                    <BookmarkFilledIcon />
+                  ) : (
+                    <BookmarkIcon />
+                  )}
                 </IconButton>
               </Flex>
             </Theme>
@@ -467,8 +410,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   highContrast
                   size="2"
                   color="gray"
-                  onClick={(e) => e.preventDefault()}
-                >
+                  onClick={(e) => e.preventDefault()}>
                   Pants and jeans
                 </Link>
               </Flex>
@@ -484,7 +426,8 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
           </Flex>
 
           <Text as="p" size="2" color="gray" mb="4">
-            Jeans with a sense of nostalgia, as if they carry whispered tales of past adventures.
+            Jeans with a sense of nostalgia, as if they carry whispered tales of
+            past adventures.
           </Text>
 
           <Box>
@@ -501,7 +444,10 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
               <Select.Root defaultValue="Lighter" size="2">
                 <Select.Trigger tabIndex={tabIndex} variant="soft" />
-                <Select.Content variant="soft" container={portalContainer} position="popper">
+                <Select.Content
+                  variant="soft"
+                  container={portalContainer}
+                  position="popper">
                   <Select.Item value="Lighter">Lighter</Select.Item>
                   <Select.Item value="Darker">Darker</Select.Item>
                 </Select.Content>
@@ -517,7 +463,10 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
               <Select.Root defaultValue="30" size="2">
                 <Select.Trigger tabIndex={tabIndex} variant="soft" />
-                <Select.Content variant="soft" container={portalContainer} position="popper">
+                <Select.Content
+                  variant="soft"
+                  container={portalContainer}
+                  position="popper">
                   {Array.from({ length: 17 }, (_, i) => (
                     <Select.Item key={i} value={String(i + 24)}>
                       {i + 24}
@@ -527,7 +476,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               </Select.Root>
             </Flex>
 
-            <Button tabIndex={tabIndex} size="2" variant="solid" color="gray" highContrast>
+            <Button
+              tabIndex={tabIndex}
+              size="2"
+              variant="solid"
+              color="gray"
+              highContrast>
               Add to cart
             </Button>
           </Flex>
@@ -539,7 +493,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=424&q=80"
               width="280"
               height="212"
-              style={{ borderRadius: 'var(--radius-1)' }}
+              style={{ borderRadius: "var(--radius-1)" }}
             />
           </Flex>
 
@@ -553,8 +507,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 size="2"
                 weight="bold"
                 highContrast
-                onClick={(e) => e.preventDefault()}
-              >
+                onClick={(e) => e.preventDefault()}>
                 Unexpected pairings
               </Link>
 
@@ -563,7 +516,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               </Text>
             </Box>
             <Box flexShrink="0">
-              <Button tabIndex={tabIndex} size="2" variant="soft" color="gray" highContrast>
+              <Button
+                tabIndex={tabIndex}
+                size="2"
+                variant="soft"
+                color="gray"
+                highContrast>
                 Shop now
               </Button>
             </Box>
@@ -609,15 +567,25 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               width="280"
               height="218"
               src="https://workos.imgix.net/images/bc04b345-f225-488d-8a46-1811096d0c3b.png?auto=format&fit=clip&q=90&w=840&h=654"
-              style={{ borderRadius: 'var(--radius-1)' }}
+              style={{ borderRadius: "var(--radius-1)" }}
             />
           </Flex>
 
           <Flex gap="2" justify="end">
-            <Button tabIndex={tabIndex} size="2" variant="soft" color="gray" highContrast>
+            <Button
+              tabIndex={tabIndex}
+              size="2"
+              variant="soft"
+              color="gray"
+              highContrast>
               Edit
             </Button>
-            <Button tabIndex={tabIndex} size="2" variant="solid" color="gray" highContrast>
+            <Button
+              tabIndex={tabIndex}
+              size="2"
+              variant="solid"
+              color="gray"
+              highContrast>
               Confirm
             </Button>
           </Flex>
@@ -636,36 +604,32 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
           <Grid gapX="2" gapY="4" columns="2">
             {[
               {
-                name: 'Jeans #8',
-                url:
-                  'https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80&crop=entropy',
-                price: '$118',
+                name: "Jeans #8",
+                url: "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80&crop=entropy",
+                price: "$118",
               },
 
               {
-                name: 'Jacket #3',
-                url:
-                  'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&crop=entropy&w=272&h=272&q=80',
-                price: '$49',
+                name: "Jacket #3",
+                url: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&crop=entropy&w=272&h=272&q=80",
+                price: "$49",
               },
               {
-                name: 'Pants #10',
-                url:
-                  'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80',
-                price: '$32',
+                name: "Pants #10",
+                url: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80",
+                price: "$32",
               },
               {
-                name: 'Shirt #11',
-                url:
-                  'https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80',
-                price: '$39',
+                name: "Shirt #11",
+                url: "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=272&h=272&q=80",
+                price: "$39",
               },
             ].map((item) => (
               <Box key={item.url}>
                 <Flex mb="2">
                   <img
                     src={item.url}
-                    style={{ borderRadius: 'var(--radius-1)' }}
+                    style={{ borderRadius: "var(--radius-1)" }}
                     width="136"
                     height="136"
                   />
@@ -677,8 +641,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                     tabIndex={tabIndex}
                     underline="hover"
                     weight="bold"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                    onClick={(e) => e.preventDefault()}>
                     {item.name}
                   </Link>
                   , {item.price}
@@ -699,13 +662,12 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               Product discarded
             </Heading>
             <Text size="2" color="gray" mb="4">
-              It’s still available in the{' '}
+              It’s still available in the{" "}
               <Link
                 href="#"
                 tabIndex={tabIndex}
                 underline="hover"
-                onClick={(e) => e.preventDefault()}
-              >
+                onClick={(e) => e.preventDefault()}>
                 archive
               </Link>
               .
@@ -771,11 +733,11 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   width="200"
                   height="200"
                   style={{
-                    borderRadius: 'var(--radius-2)',
-                    objectFit: 'cover',
-                    width: '100%',
+                    borderRadius: "var(--radius-2)",
+                    objectFit: "cover",
+                    width: "100%",
                     height: 121,
-                    cursor: 'zoom-in',
+                    cursor: "zoom-in",
                   }}
                 />
               </Flex>
@@ -785,30 +747,48 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   width="200"
                   height="200"
                   style={{
-                    borderRadius: 'var(--radius-2)',
-                    objectFit: 'cover',
-                    width: '100%',
+                    borderRadius: "var(--radius-2)",
+                    objectFit: "cover",
+                    width: "100%",
                     height: 121,
-                    cursor: 'zoom-in',
+                    cursor: "zoom-in",
                   }}
                 />
               </Flex>
               <Flex
                 align="center"
                 justify="center"
-                style={{ border: '1px solid var(--gray-5)', borderRadius: 'var(--radius-2)' }}
-              >
+                style={{
+                  border: "1px solid var(--gray-5)",
+                  borderRadius: "var(--radius-2)",
+                }}>
                 <Grid columns="2" gap="2">
-                  <IconButton tabIndex={tabIndex} highContrast variant="soft" size="2">
+                  <IconButton
+                    tabIndex={tabIndex}
+                    highContrast
+                    variant="soft"
+                    size="2">
                     <ImageIcon />
                   </IconButton>
-                  <IconButton tabIndex={tabIndex} highContrast variant="soft" size="2">
+                  <IconButton
+                    tabIndex={tabIndex}
+                    highContrast
+                    variant="soft"
+                    size="2">
                     <VideoIcon />
                   </IconButton>
-                  <IconButton tabIndex={tabIndex} highContrast variant="soft" size="2">
+                  <IconButton
+                    tabIndex={tabIndex}
+                    highContrast
+                    variant="soft"
+                    size="2">
                     <InstagramLogoIcon />
                   </IconButton>
-                  <IconButton tabIndex={tabIndex} highContrast variant="soft" size="2">
+                  <IconButton
+                    tabIndex={tabIndex}
+                    highContrast
+                    variant="soft"
+                    size="2">
                     <RulerHorizontalIcon />
                   </IconButton>
                 </Grid>
@@ -890,17 +870,19 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 type="single"
                 tabIndex={tabIndex}
                 value={state.productMaterial}
-                onValueChange={(value) => setState({ ...state, productMaterial: value })}
+                onValueChange={(value) =>
+                  setState({ ...state, productMaterial: value })
+                }
                 values={[
-                  'Synthetic',
-                  'Wool',
-                  'Cotton',
-                  'Linen',
-                  'Denim',
-                  'Leather',
-                  'Silk',
-                  'Chiffon',
-                  'Other',
+                  "Synthetic",
+                  "Wool",
+                  "Cotton",
+                  "Linen",
+                  "Denim",
+                  "Leather",
+                  "Silk",
+                  "Chiffon",
+                  "Other",
                 ]}
               />
             </Grid>
@@ -916,19 +898,20 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                 type="single"
                 tabIndex={tabIndex}
                 values={[
-                  'White',
-                  'Gray',
-                  'Black',
-                  'Red',
-                  'Pink',
-                  'Violet',
-                  'Blue',
-                  'Green',
-                  'Beige',
+                  "White",
+                  "Gray",
+                  "Black",
+                  "Red",
+                  "Pink",
+                  "Violet",
+                  "Blue",
+                  "Green",
+                  "Beige",
                 ]}
                 value={state.productColor}
-                onValueChange={(value) => setState({ ...state, productColor: value })}
-              >
+                onValueChange={(value) =>
+                  setState({ ...state, productColor: value })
+                }>
                 {(value) => (
                   <React.Fragment>
                     <Box
@@ -937,18 +920,18 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                       height="16px"
                       style={{
                         background: {
-                          White: 'white',
-                          Gray: 'var(--gray-9)',
-                          Black: '#1B1B18',
-                          Red: 'var(--red-9)',
-                          Pink: 'var(--pink-8)',
-                          Violet: 'var(--violet-9)',
-                          Blue: 'var(--blue-9)',
-                          Green: 'var(--teal-9)',
-                          Beige: '#E5DFCF',
+                          White: "white",
+                          Gray: "var(--gray-9)",
+                          Black: "#1B1B18",
+                          Red: "var(--red-9)",
+                          Pink: "var(--pink-8)",
+                          Violet: "var(--violet-9)",
+                          Blue: "var(--blue-9)",
+                          Green: "var(--teal-9)",
+                          Beige: "#E5DFCF",
                         }[value],
-                        borderRadius: 'var(--radius-1)',
-                        boxShadow: 'inset 0 0 0 1px rgba(160, 160, 160, 0.4)',
+                        borderRadius: "var(--radius-1)",
+                        boxShadow: "inset 0 0 0 1px rgba(160, 160, 160, 0.4)",
                       }}
                     />
                     {value}
@@ -967,9 +950,11 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               <ToggleButtons
                 type="multiple"
                 tabIndex={tabIndex}
-                values={['XS', 'S', 'M', 'L', 'XL']}
+                values={["XS", "S", "M", "L", "XL"]}
                 value={state.productSizes}
-                onValueChange={(value) => setState({ ...state, productSizes: value })}
+                onValueChange={(value) =>
+                  setState({ ...state, productSizes: value })
+                }
               />
             </Grid>
           </Box>
@@ -1007,56 +992,58 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
             <Separator size="4" />
 
-            {([
-              {
-                id: 1005,
-                paymentStatus: 'Paid',
-                paymentStatusColor: 'teal',
-                fulfillment: 'Delivering',
-                fulfillmentColor: 'amber',
-                amount: '$154.60',
-              },
-              {
-                id: 1004,
-                paymentStatus: 'Paid',
-                paymentStatusColor: 'teal',
-                fulfillment: 'Unfulfilled',
-                fulfillmentColor: 'amber',
-                amount: '$93.49',
-              },
-              {
-                id: 1003,
-                paymentStatus: 'Refunded',
-                paymentStatusColor: 'gray',
-                fulfillment: 'Cancelled',
-                fulfillmentColor: 'red',
-                amount: '$39.00',
-              },
-              {
-                id: 1002,
-                paymentStatus: 'Unpaid',
-                paymentStatusColor: 'amber',
-                fulfillment: 'Unfulfilled',
-                fulfillmentColor: 'amber',
-                amount: '$438.90',
-              },
-              {
-                id: 1001,
-                paymentStatus: 'Paid',
-                paymentStatusColor: 'teal',
-                fulfillment: 'Fulfilled',
-                fulfillmentColor: 'teal',
-                amount: '$532.64',
-              },
-              {
-                id: 1000,
-                paymentStatus: 'Paid',
-                paymentStatusColor: 'teal',
-                fulfillment: 'Fulfilled',
-                fulfillmentColor: 'teal',
-                amount: '$625.03',
-              },
-            ] as const).map((order) => (
+            {(
+              [
+                {
+                  id: 1005,
+                  paymentStatus: "Paid",
+                  paymentStatusColor: "teal",
+                  fulfillment: "Delivering",
+                  fulfillmentColor: "amber",
+                  amount: "$154.60",
+                },
+                {
+                  id: 1004,
+                  paymentStatus: "Paid",
+                  paymentStatusColor: "teal",
+                  fulfillment: "Unfulfilled",
+                  fulfillmentColor: "amber",
+                  amount: "$93.49",
+                },
+                {
+                  id: 1003,
+                  paymentStatus: "Refunded",
+                  paymentStatusColor: "gray",
+                  fulfillment: "Cancelled",
+                  fulfillmentColor: "red",
+                  amount: "$39.00",
+                },
+                {
+                  id: 1002,
+                  paymentStatus: "Unpaid",
+                  paymentStatusColor: "amber",
+                  fulfillment: "Unfulfilled",
+                  fulfillmentColor: "amber",
+                  amount: "$438.90",
+                },
+                {
+                  id: 1001,
+                  paymentStatus: "Paid",
+                  paymentStatusColor: "teal",
+                  fulfillment: "Fulfilled",
+                  fulfillmentColor: "teal",
+                  amount: "$532.64",
+                },
+                {
+                  id: 1000,
+                  paymentStatus: "Paid",
+                  paymentStatusColor: "teal",
+                  fulfillment: "Fulfilled",
+                  fulfillmentColor: "teal",
+                  amount: "$625.03",
+                },
+              ] as const
+            ).map((order) => (
               <Grid columns="4" key={order.id}>
                 <Text size="3" color="gray">
                   <Link
@@ -1064,18 +1051,21 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                     tabIndex={tabIndex}
                     underline="hover"
                     weight="bold"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                    onClick={(e) => e.preventDefault()}>
                     #{order.id}
                   </Link>
                 </Text>
 
                 <Box>
-                  <Badge color={order.paymentStatusColor}>{order.paymentStatus}</Badge>
+                  <Badge color={order.paymentStatusColor}>
+                    {order.paymentStatus}
+                  </Badge>
                 </Box>
 
                 <Box>
-                  <Badge color={order.fulfillmentColor}>{order.fulfillment}</Badge>
+                  <Badge color={order.fulfillmentColor}>
+                    {order.fulfillment}
+                  </Badge>
                 </Box>
 
                 <Text size="2" align="right">
@@ -1103,8 +1093,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
             mb="5"
             variant="soft"
             tabIndex={tabIndex}
-            placeholder="Enter package number"
-          >
+            placeholder="Enter package number">
             <TextField.Slot>
               <MagnifyingGlassIcon />
             </TextField.Slot>
@@ -1131,8 +1120,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                   underline="hover"
                   highContrast
                   size="3"
-                  onClick={(e) => e.preventDefault()}
-                >
+                  onClick={(e) => e.preventDefault()}>
                   #94356
                 </Link>
               </Box>
@@ -1181,13 +1169,19 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
             </Flex>
 
             <Box position="relative" pt="1">
-              <Box position="absolute" top="0" bottom="0" width="1px" ml="-0.5px">
+              <Box
+                position="absolute"
+                top="0"
+                bottom="0"
+                width="1px"
+                ml="-0.5px">
                 <Separator
                   size="4"
                   orientation="vertical"
                   mt="2"
                   style={{
-                    background: 'linear-gradient(to bottom, var(--teal-6) 90%, transparent)',
+                    background:
+                      "linear-gradient(to bottom, var(--teal-6) 90%, transparent)",
                   }}
                 />
               </Box>
@@ -1263,29 +1257,34 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               <Box>
                 <img
                   src="https://images.unsplash.com/photo-1514866747592-c2d279258a78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=600&q=80"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </Box>
 
-              <Text asChild size="1" mb="2" color="gray" style={{ lineHeight: '20px' }}>
+              <Text
+                asChild
+                size="1"
+                mb="2"
+                color="gray"
+                style={{ lineHeight: "20px" }}>
                 <Box p="4">
                   <Text mr="6px">Men’s</Text>
                   {[
-                    'Polo #11',
-                    'Shirt #12',
-                    'Shirt #24',
-                    'Sneakers #3',
-                    'Jeans #9',
-                    'T‑shirt #4',
-                    'Pants #20',
-                    'Socks #9',
-                    'Watch #15',
-                    'Belt #7',
-                    'Bag #6',
-                    'Shirt #16',
-                    'Suit #17',
-                    'Shorts #22',
-                    'Shoes #13',
+                    "Polo #11",
+                    "Shirt #12",
+                    "Shirt #24",
+                    "Sneakers #3",
+                    "Jeans #9",
+                    "T‑shirt #4",
+                    "Pants #20",
+                    "Socks #9",
+                    "Watch #15",
+                    "Belt #7",
+                    "Bag #6",
+                    "Shirt #16",
+                    "Suit #17",
+                    "Shorts #22",
+                    "Shoes #13",
                   ].map((product) => (
                     <React.Fragment key={product}>
                       <Link
@@ -1295,8 +1294,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                         underline="hover"
                         highContrast
                         mr="6px"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                        onClick={(e) => e.preventDefault()}>
                         {product}
                       </Link>
                       <wbr />
@@ -1305,18 +1303,18 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
                   <Text mr="6px">Women’s</Text>
                   {[
-                    'Blouse #16',
-                    'Dress #3',
-                    'Skirt #22',
-                    'Heels #13',
-                    'Sandals #18',
-                    'Bag #14',
-                    'Scarf #19',
-                    'Earrings #23',
-                    'Bracelet #21',
-                    'Necklace #25',
-                    'Glasses #26',
-                    'Perfume #27',
+                    "Blouse #16",
+                    "Dress #3",
+                    "Skirt #22",
+                    "Heels #13",
+                    "Sandals #18",
+                    "Bag #14",
+                    "Scarf #19",
+                    "Earrings #23",
+                    "Bracelet #21",
+                    "Necklace #25",
+                    "Glasses #26",
+                    "Perfume #27",
                   ].map((product) => (
                     <React.Fragment key={product}>
                       <Link
@@ -1326,8 +1324,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                         underline="hover"
                         highContrast
                         mr="6px"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                        onClick={(e) => e.preventDefault()}>
                         {product}
                       </Link>
                       <wbr />
@@ -1339,7 +1336,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               <Box>
                 <img
                   src="https://plus.unsplash.com/premium_photo-1668485968648-f29fe5157463?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=600&q=80"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </Box>
 
@@ -1358,7 +1355,7 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
               <Box>
                 <img
                   src="https://images.unsplash.com/photo-1532660621034-fb55e2e59762?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=700&q=80"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </Box>
             </Grid>
@@ -1372,7 +1369,10 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
 
           <Flex gap="2">
             <Box position="relative" mb="5" flexGrow="1">
-              <TextField.Root tabIndex={tabIndex} variant="soft" placeholder="Search">
+              <TextField.Root
+                tabIndex={tabIndex}
+                variant="soft"
+                placeholder="Search">
                 <TextField.Slot>
                   <MagnifyingGlassIcon />
                 </TextField.Slot>
@@ -1381,18 +1381,24 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
             <Flex direction="column" minWidth="140px">
               <Select.Root defaultValue="All customers">
                 <Select.Trigger variant="soft" tabIndex={tabIndex} />
-                <Select.Content variant="soft" container={portalContainer} position="popper">
+                <Select.Content
+                  variant="soft"
+                  container={portalContainer}
+                  position="popper">
                   <Select.Item value="All customers">All customers</Select.Item>
                   <Select.Item value={new Date().getFullYear().toString()}>
                     {new Date().getFullYear()}
                   </Select.Item>
-                  <Select.Item value={(new Date().getFullYear() - 1).toString()}>
+                  <Select.Item
+                    value={(new Date().getFullYear() - 1).toString()}>
                     {new Date().getFullYear() - 1}
                   </Select.Item>
-                  <Select.Item value={(new Date().getFullYear() - 2).toString()}>
+                  <Select.Item
+                    value={(new Date().getFullYear() - 2).toString()}>
                     {new Date().getFullYear() - 2}
                   </Select.Item>
-                  <Select.Item value={(new Date().getFullYear() - 3).toString()}>
+                  <Select.Item
+                    value={(new Date().getFullYear() - 3).toString()}>
                     {new Date().getFullYear() - 3}
                   </Select.Item>
                 </Select.Content>
@@ -1403,39 +1409,39 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
           <Flex direction="column" gap="5" mb="2">
             {[
               {
-                name: 'Elijah Wilson',
-                address: '735 Pine Street, Apartment 4C, Portland, OR 34567',
-                customerSince: 'November 3, 2017',
-                sales: '$15,432.56',
+                name: "Elijah Wilson",
+                address: "735 Pine Street, Apartment 4C, Portland, OR 34567",
+                customerSince: "November 3, 2017",
+                sales: "$15,432.56",
                 orders: 42,
               },
               {
-                name: 'Cameron Johnson',
-                address: '2465 Main Street, Apt 3B, Springfield, OH 12345',
-                customerSince: 'June 10, 2020',
-                sales: '$13,976.43',
+                name: "Cameron Johnson",
+                address: "2465 Main Street, Apt 3B, Springfield, OH 12345",
+                customerSince: "June 10, 2020",
+                sales: "$13,976.43",
                 orders: 12,
               },
               {
-                name: 'Sophia Martinez',
-                address: '512 Oakwood Avenue, Unit 201, Greenville, SC 67890',
-                customerSince: 'September 27, 2019',
-                sales: '$11,653.03',
+                name: "Sophia Martinez",
+                address: "512 Oakwood Avenue, Unit 201, Greenville, SC 67890",
+                customerSince: "September 27, 2019",
+                sales: "$11,653.03",
                 orders: 34,
               },
               {
-                name: 'Nathan Thompson',
-                address: '837 Maple Lane, Suite 102, Lexington, KY 45678',
-                customerSince: 'May 5, 2018',
-                sales: '$8,245.92',
+                name: "Nathan Thompson",
+                address: "837 Maple Lane, Suite 102, Lexington, KY 45678",
+                customerSince: "May 5, 2018",
+                sales: "$8,245.92",
                 orders: 22,
               },
 
               {
-                name: 'Olivia Adams',
-                address: '1123 Elmwood Drive, Boulder, CO 23456',
-                customerSince: 'January 12, 2021',
-                sales: '$6,789.21',
+                name: "Olivia Adams",
+                address: "1123 Elmwood Drive, Boulder, CO 23456",
+                customerSince: "January 12, 2021",
+                sales: "$6,789.21",
                 orders: 18,
               },
             ].map((customer) => (
@@ -1448,15 +1454,16 @@ export const ExampleThemesEcommerce = ({ focusable = true, ...props }: ExampleLa
                     weight="bold"
                     highContrast
                     underline="hover"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                    onClick={(e) => e.preventDefault()}>
                     {customer.name}
                   </Link>
                   <Text as="div" size="2" mb="2">
                     Customer since {customer.customerSince}
                   </Text>
                   <Text as="div" size="1" mb="1" color="gray">
-                    <address style={{ all: 'unset' }}>{customer.address}</address>
+                    <address style={{ all: "unset" }}>
+                      {customer.address}
+                    </address>
                   </Text>
                 </Box>
 
@@ -1497,20 +1504,20 @@ const GreenDot = () => (
     ml="-1"
     left="0"
     style={{
-      backgroundColor: 'var(--teal-9)',
-      borderRadius: '100%',
+      backgroundColor: "var(--teal-9)",
+      borderRadius: "100%",
     }}
   />
 );
 
 interface ToggleButtonsSingleProps {
-  type: 'single';
+  type: "single";
   value: string;
   onValueChange: (value: string) => void;
 }
 
 interface ToggleButtonsMultipleProps {
-  type: 'multiple';
+  type: "multiple";
   value: string[];
   onValueChange: (value: string[]) => void;
 }
@@ -1523,38 +1530,42 @@ interface ToggleButtonsCommonProps {
 
 type ToggleGroupRootElement = React.ElementRef<typeof ToggleGroup.Root>;
 
-type ToggleButtonsProps = (ToggleButtonsSingleProps | ToggleButtonsMultipleProps) &
+type ToggleButtonsProps = (
+  | ToggleButtonsSingleProps
+  | ToggleButtonsMultipleProps
+) &
   ToggleButtonsCommonProps;
 
-const ToggleButtons = React.forwardRef<ToggleGroupRootElement, ToggleButtonsProps>(
-  ({ children, tabIndex, values, ...props }, forwardedRef) => {
-    const isActive = (value: string) =>
-      props.type === 'single' ? props.value === value : props.value.includes(value);
+const ToggleButtons = React.forwardRef<
+  ToggleGroupRootElement,
+  ToggleButtonsProps
+>(({ children, tabIndex, values, ...props }, forwardedRef) => {
+  const isActive = (value: string) =>
+    props.type === "single"
+      ? props.value === value
+      : props.value.includes(value);
 
-    return (
-      <ToggleGroup.Root
-        ref={forwardedRef}
-        {...props}
-        {...(tabIndex !== undefined && { tabIndex })}
-        onValueChange={(value) => {
-          if (value) {
-            props.onValueChange(value);
-          }
-        }}
-      >
-        {values.map((value) => (
-          <ToggleGroup.Item asChild key={value} value={value}>
-            <Button
-              highContrast
-              variant={isActive(value) ? 'solid' : 'soft'}
-              style={{ fontWeight: 400 }}
-              {...(tabIndex !== undefined && { tabIndex })}
-            >
-              {children ? children(value) : value}
-            </Button>
-          </ToggleGroup.Item>
-        ))}
-      </ToggleGroup.Root>
-    );
-  }
-);
+  return (
+    <ToggleGroup.Root
+      ref={forwardedRef}
+      {...props}
+      {...(tabIndex !== undefined && { tabIndex })}
+      onValueChange={(value) => {
+        if (value) {
+          props.onValueChange(value);
+        }
+      }}>
+      {values.map((value) => (
+        <ToggleGroup.Item asChild key={value} value={value}>
+          <Button
+            highContrast
+            variant={isActive(value) ? "solid" : "soft"}
+            style={{ fontWeight: 400 }}
+            {...(tabIndex !== undefined && { tabIndex })}>
+            {children ? children(value) : value}
+          </Button>
+        </ToggleGroup.Item>
+      ))}
+    </ToggleGroup.Root>
+  );
+});

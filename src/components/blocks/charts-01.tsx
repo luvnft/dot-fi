@@ -31,7 +31,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart";
+} from "@/components//ui/chart";
 import { Separator } from "@/components/ui/separator";
 
 export function Charts01() {
