@@ -67,10 +67,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function RightBar() {
   return (
-    <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
-      <CardHeader className="flex flex-row items-start bg-muted/50">
-        Trending
-        {/* <div className="grid gap-0.5">
+    <>
+      <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
+        <CardHeader className="flex flex-row items-start bg-muted/50">
+          Trending
+          {/* <div className="grid gap-0.5">
           <CardTitle className="group flex items-center gap-2 text-lg">
             Order Oe31b70H
             <Button
@@ -106,11 +107,11 @@ export default function RightBar() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div> */}
-      </CardHeader>
-      <CardContent className="p-6 text-sm">
-        <div className="grid gap-3">
-          <div className="font-semibold">Top Leadeboard</div>
-          {/* <ul className="grid gap-3">
+        </CardHeader>
+        <CardContent className="p-6 text-sm">
+          <div className="grid gap-3">
+            <div className="font-semibold">Top Leadeboard</div>
+            {/* <ul className="grid gap-3">
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">
                 Glimmer Lamps x <span>2</span>
@@ -124,7 +125,7 @@ export default function RightBar() {
               <span>$49.00</span>
             </li>
           </ul> */}
-          {/* <Separator className="my-2" />
+            {/* <Separator className="my-2" />
           <ul className="grid gap-3">
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Subtotal</span>
@@ -143,8 +144,8 @@ export default function RightBar() {
               <span>$329.00</span>
             </li>
           </ul> */}
-        </div>
-        {/* <Separator className="my-4" />
+          </div>
+          {/* <Separator className="my-4" />
         <div className="grid grid-cols-2 gap-4">
           <div className="grid gap-3">
             <div className="font-semibold">Shipping Information</div>
@@ -196,28 +197,33 @@ export default function RightBar() {
             </div>
           </dl>
         </div> */}
-      </CardContent>
-      <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
-        <div className="text-xs text-muted-foreground">
-          Updated <time dateTime="2023-11-23">November 23, 2023</time>
-        </div>
-        <Pagination className="ml-auto mr-0 w-auto">
-          <PaginationContent>
-            <PaginationItem>
-              <Button size="icon" variant="outline" className="h-6 w-6">
-                <ChevronLeft className="h-3.5 w-3.5" />
-                <span className="sr-only">Previous Trend</span>
-              </Button>
-            </PaginationItem>
-            <PaginationItem>
-              <Button size="icon" variant="outline" className="h-6 w-6">
-                <ChevronRight className="h-3.5 w-3.5" />
-                <span className="sr-only">Next Order</span>
-              </Button>
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </CardFooter>
-    </Card>
+        </CardContent>
+        <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
+          <div className="text-xs text-muted-foreground">
+            Updated <time dateTime="2023-11-23">November 23, 2023</time>
+          </div>
+          <Pagination className="ml-auto mr-0 w-auto">
+            <PaginationContent>
+              <PaginationItem>
+                <Button size="icon" variant="outline" className="h-6 w-6">
+                  <ChevronLeft className="h-3.5 w-3.5" />
+                  <span className="sr-only">Previous Trend</span>
+                </Button>
+              </PaginationItem>
+              <PaginationItem>
+                <Button size="icon" variant="outline" className="h-6 w-6">
+                  <ChevronRight className="h-3.5 w-3.5" />
+                  <span className="sr-only">Next Order</span>
+                </Button>
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </CardFooter>
+      </Card>
+      <div className=" text-muted-foreground">
+        Terms of Service Privacy Policy Cookie Policy Accessibility Ads info
+        More © 2024 Theras Labs
+      </div>
+    </>
   );
 }

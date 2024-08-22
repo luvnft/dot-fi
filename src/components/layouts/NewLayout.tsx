@@ -34,6 +34,45 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
+const LIST_MENU = [
+  {
+    title: "Home",
+  },
+  // {
+  //   title: 'Search'
+  // },
+  {
+    title: "Explore",
+  },
+  {
+    title: "Discover",
+  },
+  {
+    title: "Leaderboard",
+  },
+  {
+    title: "Messages",
+  },
+  {
+    title: "Notifications",
+  },
+  {
+    title: "Bookmarks",
+  },
+  // {
+  //   title: 'Create'
+  // },
+  // {
+  //   title: 'Settings'
+  // },
+  {
+    title: "More",
+  },
+  // {
+  //   title: ''
+  // },
+];
+
 export function NewLayout({ children }) {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] fixed">
@@ -47,51 +86,27 @@ export function NewLayout({ children }) {
               {/* <Package2 className="h-6 w-6" /> */}
               <span className="">BUZZUP</span>
             </RouterLink>
-            <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
+            {/* <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
               <span className="sr-only">Toggle notifications</span>
-            </Button>
+            </Button> */}
           </div>
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <RouterLink
-                to="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </RouterLink>
-              <RouterLink
-                to="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <ShoppingCart className="h-4 w-4" />
-                Orders
-                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                  6
-                </Badge>
-              </RouterLink>
-              <RouterLink
-                to="#"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
-                <Package className="h-4 w-4" />
-                Products{" "}
-              </RouterLink>
-              <RouterLink
-                to="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Users className="h-4 w-4" />
-                Customers
-              </RouterLink>
-              <RouterLink
-                to="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LineChart className="h-4 w-4" />
-                Analytics
-              </RouterLink>
+              {LIST_MENU.map((item, i) => (
+                <RouterLink
+                  key={`menu-list-dekstop-` + i}
+                  to="#"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                >
+                  {/* icon here */}
+                  {/* <Home className="h-4 w-4" /> */}
+                  {item?.title}
+                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+                    6
+                  </Badge>
+                </RouterLink>
+              ))}
             </nav>
           </div>
           <div className="mt-auto p-4">
@@ -129,49 +144,25 @@ export function NewLayout({ children }) {
               <nav className="grid gap-2 text-lg font-medium">
                 <RouterLink
                   to="#"
-                  className="flex items-center gap-2 text-lg font-semibold"
+                  className="flex items-center gap-2 text-lg font-semibold mb-4"
                 >
-                  <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
+                  {/* <Package2 className="h-6 w-6" /> */}
+                  <span className="sr-only">BUZZUP</span>
                 </RouterLink>
-                <RouterLink
-                  to="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </RouterLink>
-                <RouterLink
-                  to="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
-                </RouterLink>
-                <RouterLink
-                  to="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Package className="h-5 w-5" />
-                  Products
-                </RouterLink>
-                <RouterLink
-                  to="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Users className="h-5 w-5" />
-                  Customers
-                </RouterLink>
-                <RouterLink
-                  to="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
-                </RouterLink>
+
+                {LIST_MENU?.map((item, i) => (
+                  <RouterLink
+                    key={`menu-list-mobile`}
+                    to="#"
+                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  >
+                    {/* <Home className="h-5 w-5" /> */}
+                    {item?.title}
+                    <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+                      6
+                    </Badge>
+                  </RouterLink>
+                ))}
               </nav>
               <div className="mt-auto">
                 <Card>
@@ -191,17 +182,16 @@ export function NewLayout({ children }) {
               </div>
             </SheetContent>
           </Sheet>
-          <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search products..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                />
-              </div>
-            </form>
+          <div className="w-full flex  items-end justify-end">
+            {/* <div className="w-32 h-32 bg-slate-500" /> */}
+            <div className="relative  border-red-500 min-w-[300px]">
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search..."
+                className="w-full appearance-none bg-background pl-8 shadow-none "
+              />
+            </div>
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

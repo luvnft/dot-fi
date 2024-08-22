@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Empty from "./pages/Empty";
 import Sample from "./pages/Sample";
 import Homepage from "./pages/Homepage";
-import { MyProduct } from "./pages/Dashboard/MyProduct";
+// import { MyProduct } from "./pages/Dashboard/MyProduct";
 import Sale from "./pages/Sale";
 
 export const router = createBrowserRouter(
@@ -30,10 +30,10 @@ export const router = createBrowserRouter(
           //   },
           // ],
         },
-        {
-          path: "dashboard/my-product",
-          element: <MyProduct />,
-        },
+        // {
+        //   path: "dashboard/my-product",
+        //   element: <MyProduct />,
+        // },
         {
           path: "sample",
           element: <Sample />,

@@ -65,21 +65,21 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import RightBar from "../layouts/RightBar";
+import PostList from "../posts/PostList";
 
 export default function Main() {
   // can do background here ?
   return (
-    <main className="bg-gray-600 grid flex-1 items-start gap-4 p-4 sm:px-6  md:gap-8 lg:grid-cols-3 xl:grid-cols-3 ">
-      <div className="bg-blue-600 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2 ">
-        {/* content here */}
+    <main className="bg-green-900 grid flex-1 items-start gap-4 p-4 sm:px-6  md:gap-8 lg:grid-cols-3 xl:grid-cols-3 ">
+      {/* TABS FOR TWITTER, farcaster, lens */}
+      <div className=" grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2 md:px-10 xl:px-20">
+        {/* posts here */}
         {/* scroll content here */}
-        <ScrollArea className="h-screen rounded-md border p-4 pb-20">
-          {[1, 1, 1, 1].map((item, i) => (
-            <div className="h-[400px] my-2 bg-gray-500" />
-          ))}
-        </ScrollArea>
+
+        {/* category quests or etc */}
+        <PostList />
       </div>
-      <div className="bg-pink-400">
+      <div className="">
         <RightBar />
       </div>
     </main>
