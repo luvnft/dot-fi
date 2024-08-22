@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import { ThemesHeroLayout } from "@/components/radix-website/ThemesHeroLayout";
-
+import { TooltipProvider } from "@/components/ui/tooltip";
 type ThemeProviderProps = {
   children: React.ReactNode;
   defaultTheme?: string;
@@ -61,9 +61,10 @@ export function ThemeProvider({
     //     },
     //       }}>
     <Theme
-      //   hasBackground
+      hasBackground
       appearance={"dark"}
       accentColor="teal"
+      panelBackground="translucent"
       grayColor="slate"
       className="radix-themes-custom-fonts">
       {/* <Box height="0">
@@ -71,10 +72,11 @@ export function ThemeProvider({
             </Box> */}
       {/* <ThemesHeroLayout.Root> */}
       <ThemesHeroLayout.Background>
-        <BackgroundImage style={tealBackgroundImageStyle} id="5" />
+        <BackgroundImage style={tealBackgroundImageStyle} id="4" />
       </ThemesHeroLayout.Background>
-
-      {children}
+      <div className="fixed overflow-scroll w-full h-full ">
+        <TooltipProvider>{children}</TooltipProvider>
+      </div>
       {/* </ThemesHeroLayout.Root> */}
     </Theme>
   );

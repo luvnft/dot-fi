@@ -20,47 +20,43 @@ export const mainMenu: NavItemWithChildren[] = [
     to: "",
   },
   {
-    title: "Projects",
-    to: "",
-  },
-  {
-    title: "Products",
-    to: "",
-  },
-  {
-    title: "Swap",
-    to: "",
-  },
-  {
-    title: "Trade",
-    to: "",
-  },
-
-  {
-    title: "Marketplace",
-    to: "",
-  },
-  {
     title: "About",
     to: "",
   },
   {
-    title: "Dropdown",
+    title: "Trade",
     items: [
       {
-        title: "Sample",
-        to: "/sample",
+        title: "Trading",
+        to: "/",
       },
       {
-        title: "Sample Dua",
+        title: "Swap",
+        to: "/",
+      },
+      {
+        title: "Marketplace",
         to: "/#",
       },
     ],
   },
   {
-    title: "Empty",
-    to: "empty",
+    title: "Create",
+    items: [
+      {
+        title: "Project (Pod)",
+        to: "/sample",
+      },
+      {
+        title: "Product (Pea)",
+        to: "/#",
+      },
+    ],
   },
+  // {
+  //   title: "Dashboard", // user
+  //   to: "/dashboard",
+  // },
 ];
 
 export const sideMenu: NavItemWithChildren[] = [];

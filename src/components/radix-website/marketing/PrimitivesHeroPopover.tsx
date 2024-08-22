@@ -1,16 +1,16 @@
-import React from 'react';
-import * as PopoverPrimitive from '@radix-ui/react-popover';
-import { styled } from '@utils/stitches';
-import { PrimitivesHeroButton } from '@components/marketing/PrimitivesHeroButton';
-import { Cross2Icon } from '@radix-ui/react-icons';
-import { Flex, IconButton, Text, TextField, Grid, Box } from '@radix-ui/themes';
+import React from "react";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+import { styled } from "../utils/stitches";
+import { PrimitivesHeroButton } from "./PrimitivesHeroButton";
+import { Cross2Icon } from "@radix-ui/react-icons";
+import { Flex, IconButton, Text, TextField, Grid, Box } from "@radix-ui/themes";
 
-const PopoverContentWrapper = styled('div', {
+const PopoverContentWrapper = styled("div", {
   // The default `position: fixed` is wobbly when scrolling with Mac touchpads,
   // which is OK when using components for real, but looks awkward in the demos.
   // `position: absolute` stays put as you scroll.
-  '& [data-radix-popper-content-wrapper]': {
-    position: 'absolute !important',
+  "& [data-radix-popper-content-wrapper]": {
+    position: "absolute !important",
   },
 });
 
@@ -36,17 +36,20 @@ export function PrimitivesHeroPopover() {
           sideOffset={5}
           avoidCollisions={false}
           style={{
-            position: 'relative',
+            position: "relative",
             width: 200,
-            backgroundColor: 'var(--color-panel-solid)',
-            borderRadius: 'var(--radius-3)',
+            backgroundColor: "var(--color-panel-solid)",
+            borderRadius: "var(--radius-3)",
             padding: 10,
-            boxShadow: '0 0 0 1px var(--gray-a3), var(--shadow-4)',
+            boxShadow: "0 0 0 1px var(--gray-a3), var(--shadow-4)",
           }}
           onInteractOutside={(event) => event.preventDefault()}
           onEscapeKeyDown={(event) => {
             event.preventDefault();
-            if (event.target instanceof HTMLElement && contentRef.current?.contains(event.target)) {
+            if (
+              event.target instanceof HTMLElement &&
+              contentRef.current?.contains(event.target)
+            ) {
               setOpen(false);
             }
           }}
@@ -59,15 +62,14 @@ export function PrimitivesHeroPopover() {
               // Restore default behaviour, but prevent the focus scroll
               // which happens when content wrapper has `position: absolute`
               setTimeout(() => {
-                const inputToFocus = contentRef.current.querySelector('input');
+                const inputToFocus = contentRef.current.querySelector("input");
                 inputToFocus?.focus({ preventScroll: true });
                 inputToFocus?.select();
               });
             } else {
               initialAutoFocusPrevented.current = true;
             }
-          }}
-        >
+          }}>
           <PopoverPrimitive.Arrow fill="var(--color-panel-solid)" />
 
           <Text as="div" size="3" weight="bold" mb="2">

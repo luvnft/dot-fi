@@ -1,86 +1,86 @@
-import React from 'react';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { styled, keyframes } from '@utils/stitches';
-import { ChevronDownIcon } from '@radix-ui/react-icons';
+import React from "react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { styled, keyframes } from "../utils/stitches";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 const slideDown = keyframes({
   from: { height: 0 },
-  to: { height: 'var(--radix-accordion-content-height)' },
+  to: { height: "var(--radix-accordion-content-height)" },
 });
 
 const slideUp = keyframes({
-  from: { height: 'var(--radix-accordion-content-height)' },
+  from: { height: "var(--radix-accordion-content-height)" },
   to: { height: 0 },
 });
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
-  background: 'var(--color-panel-solid)',
-  borderRadius: 'var(--radius-4)',
-  boxShadow: '0 0 0 1px var(--gray-a3), var(--shadow-4)',
-  width: '80%',
+  background: "var(--color-panel-solid)",
+  borderRadius: "var(--radius-4)",
+  boxShadow: "0 0 0 1px var(--gray-a3), var(--shadow-4)",
+  width: "80%",
 });
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  overflow: 'hidden',
+  overflow: "hidden",
   marginTop: 1,
-  boxShadow: '0 1px 0 var(--gray-6)',
+  boxShadow: "0 1px 0 var(--gray-6)",
 
-  '&:first-child': {
+  "&:first-child": {
     marginTop: 0,
-    borderTopLeftRadius: 'var(--radius-4)',
-    borderTopRightRadius: 'var(--radius-4)',
+    borderTopLeftRadius: "var(--radius-4)",
+    borderTopRightRadius: "var(--radius-4)",
   },
 
-  '&:last-child': {
-    borderBottomLeftRadius: 'var(--radius-4)',
-    borderBottomRightRadius: 'var(--radius-4)',
+  "&:last-child": {
+    borderBottomLeftRadius: "var(--radius-4)",
+    borderBottomRightRadius: "var(--radius-4)",
   },
 
-  '&:focus-within': {
-    position: 'relative',
+  "&:focus-within": {
+    position: "relative",
     zIndex: 1,
-    boxShadow: '0 0 0 2px var(--accent-8)',
+    boxShadow: "0 0 0 2px var(--accent-8)",
   },
 });
 
 const StyledHeader = styled(AccordionPrimitive.Header, {
-  all: 'unset',
-  display: 'flex',
+  all: "unset",
+  display: "flex",
 });
 
 const StyledTrigger = styled(AccordionPrimitive.Trigger, {
-  all: 'unset',
+  all: "unset",
   // backgroundColor: 'red',
-  padding: '0 20px',
+  padding: "0 20px",
   height: 45,
   flex: 1,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  fontFamily: 'inherit',
-  fontSize: 'var(--font-size-2)',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  fontFamily: "inherit",
+  fontSize: "var(--font-size-2)",
   lineHeight: 1,
-  color: 'var(--gray-12)',
-  transition: 'box-shadow 300ms',
+  color: "var(--gray-12)",
+  transition: "box-shadow 300ms",
   '&[data-state="open"]': {
-    boxShadow: '0 1px 0 var(--gray-6)',
+    boxShadow: "0 1px 0 var(--gray-6)",
   },
-  '@media (hover: hover)': {
-    '&:hover': {
-      backgroundColor: 'var(--gray-a2)',
+  "@media (hover: hover)": {
+    "&:hover": {
+      backgroundColor: "var(--gray-a2)",
     },
   },
 });
 
 const StyledContent = styled(AccordionPrimitive.Content, {
-  overflow: 'hidden',
-  fontSize: 'var(--font-size-2)',
-  color: 'var(--gray-a11)',
-  backgroundColor: 'var(--gray-a2)',
+  overflow: "hidden",
+  fontSize: "var(--font-size-2)",
+  color: "var(--gray-a11)",
+  backgroundColor: "var(--gray-a2)",
   lineHeight: 1.5,
   margin: 1,
-  '.dark &, .dark-theme &': {
-    backgroundColor: 'var(--color-surface)',
+  ".dark &, .dark-theme &": {
+    backgroundColor: "var(--color-surface)",
   },
 
   '&[data-state="open"]': {
@@ -91,14 +91,14 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   },
 });
 
-const StyledContentText = styled('div', {
-  padding: '15px 20px',
+const StyledContentText = styled("div", {
+  padding: "15px 20px",
 });
 
 const StyledChevron = styled(ChevronDownIcon, {
-  color: 'var(--gray-a9)',
-  transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-  '[data-state=open] &': { transform: 'rotate(180deg)' },
+  color: "var(--gray-a9)",
+  transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+  "[data-state=open] &": { transform: "rotate(180deg)" },
 });
 
 const Accordion = StyledAccordion;
@@ -137,7 +137,8 @@ export function PrimitivesHeroAccordion() {
       <AccordionItem value="item-2">
         <AccordionTrigger>Is it unstyled?</AccordionTrigger>
         <AccordionContent>
-          Yes. The Accordion is unstyled by default, giving you freedom over the look and feel.
+          Yes. The Accordion is unstyled by default, giving you freedom over the
+          look and feel.
         </AccordionContent>
       </AccordionItem>
 

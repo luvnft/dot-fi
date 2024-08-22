@@ -23,6 +23,7 @@ import {
 import { Hover } from "./Hover";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import CardProduct from "../custom/CardProduct";
+import ProjectTableEtalase from "../project/ProjectTableEtalase";
 // import { allPeople } from "./people";
 // import Head from 'next/head';
 
@@ -189,6 +190,8 @@ export const ExampleThemesMusicApp = ({
               </Card>
             </Flex>
           </Flex> */}
+          <ProjectTableEtalase />
+
           <Card size="4" style={{}}>
             <Flex
               position="absolute"

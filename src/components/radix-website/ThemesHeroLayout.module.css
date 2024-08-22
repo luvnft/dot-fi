@@ -106,11 +106,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  /* z-index: -1; */
 }
 
 .ThemesHeroLayoutBackground svg {
   width: max(2560px, 100vw);
   height: auto;
+  /* z-index: -1; */
 }
 
 .ThemesHeroLayoutMain {
