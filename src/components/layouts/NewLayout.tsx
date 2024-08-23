@@ -33,6 +33,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Separator } from "@radix-ui/react-separator";
+// import { Separator } from "@radix-ui/react-dropdown-menu";
+// import { Separator } from "@radix-ui/themes";
 
 const LIST_MENU = [
   {
@@ -77,8 +80,8 @@ export function NewLayout({ children }) {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] fixed">
       <div className="hidden border-r bg-muted/40 md:block">
-        <div className="flex h-full max-h-screen flex-col gap-2 bg-green-900">
-          <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 bg-red-500">
+        <div className="flex h-full max-h-screen flex-col gap-2 ">
+          <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 ">
             <RouterLink
               to="/"
               className="flex items-center gap-2 font-semibold"
@@ -107,6 +110,8 @@ export function NewLayout({ children }) {
                   </Badge>
                 </RouterLink>
               ))}
+              <Separator className="my-4" />
+              <Button>BUZZ</Button>
             </nav>
           </div>
           <div className="mt-auto p-4">
@@ -127,8 +132,8 @@ export function NewLayout({ children }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-purple-800">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6 bg-blue-600">
+      <div className="flex flex-col ">
+        <header className="md:hidden flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6 ">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -210,6 +215,7 @@ export function NewLayout({ children }) {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+
         {children}
       </div>
     </div>
