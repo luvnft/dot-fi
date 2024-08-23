@@ -34,6 +34,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@radix-ui/react-separator";
+import UserWallet from "@/config/web3/wallet";
 // import { Separator } from "@radix-ui/react-dropdown-menu";
 // import { Separator } from "@radix-ui/themes";
 
@@ -112,6 +113,7 @@ export function NewLayout({ children }) {
               ))}
               <Separator className="my-4" />
               <Button>BUZZ</Button>
+              <UserWallet />
             </nav>
           </div>
           <div className="mt-auto p-4">

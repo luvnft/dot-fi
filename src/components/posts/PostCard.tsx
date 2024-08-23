@@ -155,9 +155,15 @@ export default function PostCard({ focusable = true, ...props }) {
 
             <div className="left flex gap-1 ">
               {ICON_LEFT?.map((icon, i) => (
-                <div className=" flex items-center">
-                  <IconButton className="">{icon}</IconButton>
-                  &nbsp; 99
+                <div className=" flex items-center cursor-pointer">
+                  {/* <IconButton className=""> */}
+                  {icon}
+                  {/* </IconButton> */}
+                  &nbsp;
+                  <Text as="p" size="2">
+                    12.k
+                  </Text>
+                  &nbsp; &nbsp;
                 </div>
               ))}
             </div>
