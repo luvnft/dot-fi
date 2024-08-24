@@ -35,6 +35,7 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@radix-ui/react-separator";
 import UserWallet from "@/config/web3/wallet";
+import CreatePost from "../posts/CreatePost";
 // import { Separator } from "@radix-ui/react-dropdown-menu";
 // import { Separator } from "@radix-ui/themes";
 
@@ -112,7 +113,8 @@ export function NewLayout({ children }) {
                 </RouterLink>
               ))}
               <Separator className="my-4" />
-              <Button>BUZZ</Button>
+              {/* <Button>BUZZ</Button> */}
+              <CreatePost />
               <UserWallet />
             </nav>
           </div>

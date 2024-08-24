@@ -47,6 +47,7 @@ import { Label } from "@radix-ui/react-label";
 import * as React from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AspectRatio } from "../ui/aspect-ratio";
 // import { ShareIcon } from "lucide-react";
 
 // options:
@@ -125,11 +126,13 @@ export default function PostCard({ focusable = true, ...props }) {
               fully based yet? register yours at base.org/names 🔵
             </Text>
             {/* content, can be video or image too */}
-            <img
-              className="w-full h-full xl:max-h-[500px] my-2"
-              src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=540&q=80"
-              style={{ borderRadius: "var(--radius-1)", objectFit: "cover" }}
-            />
+            <AspectRatio ratio={3 / 2} className="my-2">
+              <img
+                className="w-full h-full  my-2"
+                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=540&q=80"
+                style={{ borderRadius: "var(--radius-1)", objectFit: "cover" }}
+              />
+            </AspectRatio>
           </div>
           <div className="flex justify-between my-2">
             {/* self-actions */}

@@ -66,13 +66,19 @@ export function ThemeProvider({
       accentColor="teal"
       panelBackground="translucent"
       grayColor="slate"
-      className="radix-themes-custom-fonts">
+      className="radix-themes-custom-fonts"
+    >
       {/* <Box height="0">
               <ThemesHeader ghost />
             </Box> */}
       {/* <ThemesHeroLayout.Root> */}
       <ThemesHeroLayout.Background>
         <BackgroundImage style={tealBackgroundImageStyle} id="4" />
+        {/* <img
+          src="/bg_yellow.jpeg"
+          className="w-full h-full"
+          style={{ objectFit: "cover" }}
+        /> */}
       </ThemesHeroLayout.Background>
       <div className="fixed overflow-scroll w-full h-full ">
         <TooltipProvider>{children}</TooltipProvider>
@@ -83,14 +89,14 @@ export function ThemeProvider({
 }
 
 const tealBackgroundImageStyle = {
-  "--color-background-image-base": "var(--sage-1)",
-  "--color-background-image-accent-1": "var(--teal-a7)",
-  "--color-background-image-accent-2": "var(--mint-7)",
-  "--color-background-image-accent-3": "var(--green-9)",
+  "--color-background-image-base": "var(--sky-5)",
+  "--color-background-image-accent-1": "var(--yellow-9)",
+  "--color-background-image-accent-2": "var(--lime-12)",
+  "--color-background-image-accent-3": "var(--lime-12)",
   "--color-background-image-accent-4": "var(--sky-5)",
-  "--color-background-image-accent-5": "var(--crimson-3)",
-  "--color-background-image-accent-6": "var(--mint-a5)",
-  "--color-background-image-accent-7": "var(--teal-5)",
+  "--color-background-image-accent-5": "var(--lime-12)",
+  "--color-background-image-accent-6": "var(--lime-12)",
+  "--color-background-image-accent-7": "var(--lime-12)",
 } as React.CSSProperties;
 
 const BackgroundImage = ({
@@ -105,7 +111,8 @@ const BackgroundImage = ({
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ opacity: 0.5, ...style }}
-    {...props}>
+    {...props}
+  >
     <g>
       <path
         d="M3020.93 134.455C3124.79 173.824 3164.97 266.778 3110.66 342.074C2627.55 1011.9 1866.31 2517.63 1361.75 2752.01C-681.389 3429.21 -4156.79 2571.47 -2138.3 1425.38C-119.809 279.282 -1553.39 -218.348 -406.211 -990.94C930.008 -1890.85 2560.5 -40.0647 3020.93 134.455Z"
@@ -151,7 +158,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(2922 2538.48) rotate(-117.986) scale(1898.15 3571.73)">
+        gradientTransform="translate(2922 2538.48) rotate(-117.986) scale(1898.15 3571.73)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.822917"
@@ -170,7 +178,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(3069.05 2293.39) rotate(-117.986) scale(1898.15 3571.73)">
+        gradientTransform="translate(3069.05 2293.39) rotate(-117.986) scale(1898.15 3571.73)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.822917"
@@ -189,7 +198,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(2994.87 275.232) rotate(118.839) scale(1779.46 2065.6)">
+        gradientTransform="translate(2994.87 275.232) rotate(118.839) scale(1779.46 2065.6)"
+      >
         <stop
           offset="0.328125"
           stopColor="var(--color-background-image-accent-1)"
@@ -204,7 +214,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(3934.59 656.035) rotate(148.98) scale(1938.73 3648.08)">
+        gradientTransform="translate(3934.59 656.035) rotate(148.98) scale(1938.73 3648.08)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.789375"
@@ -223,7 +234,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(-804.109 -2036.8) rotate(64.9401) scale(6436.87 6304.81)">
+        gradientTransform="translate(-804.109 -2036.8) rotate(64.9401) scale(6436.87 6304.81)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.0833333"
@@ -253,7 +265,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(201.6 -1080.02) rotate(64.9401) scale(6436.87 6304.81)">
+        gradientTransform="translate(201.6 -1080.02) rotate(64.9401) scale(6436.87 6304.81)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.0833333"
@@ -283,7 +296,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(912.834 -811.021) rotate(64.9401) scale(6436.87 6304.81)">
+        gradientTransform="translate(912.834 -811.021) rotate(64.9401) scale(6436.87 6304.81)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.140625"
@@ -314,7 +328,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(1711.41 -1639.11) rotate(64.9401) scale(6436.87 6304.81)">
+        gradientTransform="translate(1711.41 -1639.11) rotate(64.9401) scale(6436.87 6304.81)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.0833333"
@@ -344,7 +359,8 @@ const BackgroundImage = ({
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(3479.06 -623.459) rotate(113.028) scale(8332.26 4870.62)">
+        gradientTransform="translate(3479.06 -623.459) rotate(113.028) scale(8332.26 4870.62)"
+      >
         <stop stopColor="var(--color-background-image-base)" />
         <stop
           offset="0.0833333"
