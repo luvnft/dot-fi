@@ -10,6 +10,7 @@ import {
   Badge,
 } from "@radix-ui/themes";
 import * as Dialog from "@radix-ui/react-dialog";
+import { useLocation, useNavigate, Link as RouterLink } from "react-router-dom";
 
 import {
   AlertDialog,
@@ -95,8 +96,18 @@ export function DialogCreatePost() {
 export default function CreatePost() {
   return (
     <div className="">
-      <DialogCreatePost />
+      {/* <DialogCreatePost /> */}
       {/* <ButtonCreate /> */}
+      <Button
+        asChild
+        size={{ initial: "3", xs: "4" }}
+        variant="surface"
+        highContrast
+        style={{ flexGrow: 1 }}
+        className="w-full cursor-pointer"
+      >
+        <RouterLink to="/create">Post Hive</RouterLink>
+      </Button>
     </div>
   );
 }

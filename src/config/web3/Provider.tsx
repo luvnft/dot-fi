@@ -100,6 +100,7 @@ createWeb3Modal({
   // },
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: false, // Optional - false as default
+  allowUnsupportedChain: true,
 });
 
 export default function Web3Provider({ children }) {

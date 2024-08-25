@@ -48,6 +48,7 @@ import * as React from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AspectRatio } from "../ui/aspect-ratio";
+import { useNavigate } from "react-router-dom";
 // import { ShareIcon } from "lucide-react";
 
 // options:
@@ -86,9 +87,14 @@ export default function PostCard({ focusable = true, ...props }) {
     productSizes: [],
   });
 
+  const navigate = useNavigate();
+
   return (
     <Card
       //
+      onClick={() => {
+        navigate("post");
+      }}
       variant="surface"
       size="4"
       className="mb-2 pb-4"

@@ -5,10 +5,10 @@ import { NewLayout } from "@/components/layouts/NewLayout";
 import { TabsSocial } from "@/components/homepage/TabsSocial";
 import PostList from "@/components/posts/PostList";
 
-export default function Homepage() {
+export default function TwitterPage() {
   return (
     <>
-      <TabsSocial />
+      <TabsSocial defaultValue="buzzup" />
       <PostList />
     </>
   );

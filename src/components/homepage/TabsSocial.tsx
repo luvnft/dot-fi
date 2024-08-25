@@ -10,10 +10,22 @@ import {
 import { Input } from "@/components/ui/input";
 // import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate } from "react-router-dom";
 
-export function TabsSocial() {
+export function TabsSocial({
+  //
+  defaultValue = "buzzup",
+}) {
+  const navigate = useNavigate();
   return (
-    <Tabs defaultValue="buzzup" className="w-full">
+    <Tabs
+      defaultValue={defaultValue}
+      onValueChange={(e) => {
+        // console.log(e, "e");
+        navigate("/" + e);
+      }}
+      className="w-full"
+    >
       <TabsList className="grid w-full grid-cols-5">
         <TabsTrigger value="buzzup">Buzzup</TabsTrigger>
         <TabsTrigger value="twitter">Twitter</TabsTrigger>

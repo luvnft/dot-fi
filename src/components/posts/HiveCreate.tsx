@@ -80,7 +80,7 @@ export default function HiveCreate({ focusable = true, ...props }) {
   });
 
   return (
-    <Card size="2">
+    <Card size="2" className="pb-20">
       <Heading as="h3" size="4" mb="4">
         CREATE HIVE POST
       </Heading>
