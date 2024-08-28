@@ -105,7 +105,8 @@ const FocusArea = React.forwardRef<
         ) {
           event.currentTarget.focus();
         }
-      }}>
+      }}
+    >
       <div data-focus-area-entry />
       {children}
       <div data-focus-area-exit />
@@ -309,7 +310,8 @@ export const PrimitivesHero = () => {
             asChild
             size={{ initial: "3", xs: "4" }}
             color="gray"
-            highContrast>
+            highContrast
+          >
             <a>
               Get started
               <svg
@@ -318,7 +320,8 @@ export const PrimitivesHero = () => {
                 viewBox="0 0 12 12"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentcolor"
-                style={{ opacity: 1, marginRight: -3 }}>
+                style={{ opacity: 1, marginRight: -3 }}
+              >
                 <path d="M6.39205 11.6023L5.36932 10.5909L8.92045 7.03977H0V5.5625H8.92045L5.36932 2.01705L6.39205 1L11.6932 6.30114L6.39205 11.6023Z" />
               </svg>
             </a>

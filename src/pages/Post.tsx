@@ -1,9 +1,18 @@
+import CommentForm from "@/components/posts/CommentForm";
 import PostCard from "@/components/posts/PostCard";
+import PostList, { MOCK_LIST } from "@/components/posts/PostList";
 import { Card, Heading } from "@radix-ui/themes";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function PostPage() {
   const navigate = useNavigate();
+  const { id } = useParams(); // Get the post ID from route parameters
+  // get detail post
+  // Find the post with the given ID
+  const post = MOCK_LIST.find((post) => post.id === id);
+
+  // submit or add comment
+
   return (
     <>
       {/* <PostList /> */}
@@ -12,7 +21,7 @@ export default function PostPage() {
           navigate(-1);
         }}
         variant="surface"
-        className="flex items-center gap-2 mb-2 fixed z-50 cursor-pointer"
+        className="flex items-center gap-2 mb-2 fixed z-50 cursor-pointer "
       >
         <svg
           width="15"
@@ -35,8 +44,18 @@ export default function PostPage() {
       </Card>
       <br />
       <br />
-      <PostCard />
+      <PostCard {...{ post: post }} />
       {/* detail post */}
+      <CommentForm />
+
+      <div className="my-4">
+        {!!post?.comments?.list?.length &&
+          post?.comments?.list?.map((item, i) => (
+            <PostCard asComment {...{ post: item }} key={i} />
+          ))}
+      </div>
+      <br />
+      <br />
       {/* TABS */}
       {/* comment - hive */}
     </>

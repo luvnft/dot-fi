@@ -63,6 +63,7 @@ import {
   TextAlignRightIcon,
   VideoIcon,
 } from "@radix-ui/react-icons";
+import DisplayCard from "../profile/DisplayCard";
 
 const LIST_MENU = [
   {
@@ -290,7 +291,8 @@ export function NewLayout({ children }) {
             </nav>
           </div>
           <div className="mt-auto p-4">
-            <Card x-chunk="dashboard-02-chunk-0">
+            <DisplayCard />
+            {/* <Card x-chunk="dashboard-02-chunk-0">
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Connect to your profile</CardTitle>
                 <CardDescription>
@@ -301,7 +303,7 @@ export function NewLayout({ children }) {
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
                 <UserWallet />
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </div>
@@ -347,18 +349,7 @@ export function NewLayout({ children }) {
                 ))}
               </nav>
               <div className="mt-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Connect to your profile</CardTitle>
-                    <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <UserWallet />
-                  </CardContent>
-                </Card>
+                <DisplayCard />
               </div>
             </SheetContent>
           </Sheet>
