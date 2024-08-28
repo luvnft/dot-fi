@@ -34,12 +34,14 @@ import { Button, Heading, Text } from "@radix-ui/themes";
 import DialogConnect from "./DialogConnect";
 import { useState } from "react";
 import { useAccount } from "wagmi";
-
+import { useInkathon } from "@scio-labs/use-inkathon";
 // open dialog/profile section when connected
 // open dialog when disconnected
 export default function DisplayCard() {
   const [isOpen, setOpen] = useState(false);
-  const { address } = useAccount();
+  //   const { address } = useAccount();
+  const { activeChain, activeAccount } = useInkathon();
+
   return (
     <>
       {isOpen && <DialogConnect {...{ isOpen, setOpen }} />}
@@ -55,7 +57,7 @@ export default function DisplayCard() {
         <CardContent>
           {/* <UserWallet /> */}
           {/*  */}
-          {address && (
+          {activeAccount && (
             <div
               onClick={() => setOpen(true)}
               className="flex items-center  gap-2 cursor-pointer "
@@ -75,7 +77,7 @@ export default function DisplayCard() {
             </div>
           )}
 
-          {!address && (
+          {!activeAccount && (
             <Button
               onClick={() => setOpen(true)}
               asChild
