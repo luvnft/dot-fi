@@ -1,18 +1,21 @@
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import PostCard from "./PostCard";
+import usePostList from "@/api/usePostList";
 
 // header with horizontal scroll
 export default function PostList({ asComment = false }) {
+  const { data } = usePostList();
   return (
     <div className="py-10">
       {/* Post List */}
       {/* <ScrollArea className="h-screen rounded-md pb-20 "> */}
       {/* <CardSubmission /> */}
       {/* <HiveCreate /> */}
-      {MOCK_LIST.map((item, i) => (
-        <PostCard key={i} {...{ post: item, asComment }} />
-      ))}
+      {data?.length &&
+        data.map((item, i) => (
+          <PostCard key={i} {...{ post: item, asComment }} />
+        ))}
       {/* </ScrollArea> */}
     </div>
   );

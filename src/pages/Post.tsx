@@ -1,3 +1,4 @@
+import usePostDetail from "@/api/usePostDetail";
 import CommentForm from "@/components/posts/CommentForm";
 import PostCard from "@/components/posts/PostCard";
 import PostList, { MOCK_LIST } from "@/components/posts/PostList";
@@ -9,7 +10,8 @@ export default function PostPage() {
   const { id } = useParams(); // Get the post ID from route parameters
   // get detail post
   // Find the post with the given ID
-  const post = MOCK_LIST.find((post) => post.id === id);
+  // const post = MOCK_LIST.find((post) => post.id === id);
+  const { data: post } = usePostDetail(id);
 
   // submit or add comment
 
@@ -49,7 +51,8 @@ export default function PostPage() {
       <CommentForm />
 
       <div className="my-4">
-        {!!post?.comments?.list?.length &&
+        {!!post &&
+          !!post?.comments?.list?.length &&
           post?.comments?.list?.map((item, i) => (
             <PostCard asComment {...{ post: item }} key={i} />
           ))}
