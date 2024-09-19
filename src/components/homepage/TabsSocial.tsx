@@ -27,7 +27,7 @@ export function TabsSocial({
       className="w-full"
     >
       <TabsList className="grid w-full grid-cols-5">
-        <TabsTrigger value="buzzup">Buzzup</TabsTrigger>
+        <TabsTrigger value="dotfi">DOTFI</TabsTrigger>
         <TabsTrigger value="twitter">Twitter</TabsTrigger>
         <TabsTrigger value="farcaster">Farcaster</TabsTrigger>
         <TabsTrigger value="lens">Lens</TabsTrigger>

@@ -13,7 +13,7 @@ interface AppConfig {
 export const appConfig: AppConfig = {
   name: "Sample App",
   github: {
-    title: "BUZZUP Starter",
+    title: "DOTFI Starter",
     url: "",
   },
   author: {

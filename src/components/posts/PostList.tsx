@@ -65,7 +65,7 @@ const COMMENT_LIST = [
     createdBy: "", // profile
     updatedAt: "",
     id: "1",
-    title: "Twitter Space BUZZUP x BUDDY",
+    title: "Twitter Space DOTFI x BUDDY",
     desc: `
       Share your post here also works
     `,
@@ -109,9 +109,9 @@ export const MOCK_LIST = [
     updatedAt: "",
     id: "1",
 
-    title: "Twitter Space BUZZUP x BUDDY",
+    title: "Twitter Space DOTFI x BUDDY",
     desc: `
-    <p>🚀 Join BUDDY Twitter Space powered by Theras Labs (BUZZUP Team)</p>
+    <p>🚀 Join BUDDY Twitter Space powered by Theras Labs (DOTFI Team)</p>
     <p>
 <a href="https://x.com/MemeBuddyMaster/status/1828432506577707492" target="_blank" style="color: rgb(102, 163, 204); --darkreader-inline-color: #8fcbf9;" data-darkreader-inline-color="">
         <u>https://x.com/MemeBuddyMaster/status/1828432506577707492</u>
@@ -126,7 +126,7 @@ export const MOCK_LIST = [
 <p>
     <br>
 </p>
-<p>Simply participate in our weekly Twitter Space by BUDDY. Engage in the conversation, or just say hi for the rewards, and share your thoughts on BUZZUP and the BUDDY token. Capture your participation and submit proof to earn rewards.</p>
+<p>Simply participate in our weekly Twitter Space by BUDDY. Engage in the conversation, or just say hi for the rewards, and share your thoughts on DOTFI and the BUDDY token. Capture your participation and submit proof to earn rewards.</p>
 <p>
     <br>
 </p>
@@ -138,12 +138,12 @@ export const MOCK_LIST = [
 </ul>
     `,
     description: `
-  🚀 Join BUDDY Twitter Space powered by Theras Labs (BUZZUP Team)
+  🚀 Join BUDDY Twitter Space powered by Theras Labs (DOTFI Team)
 
   BUDDY is a token associated with the AI BUDDY MEME TOKEN. It enables users to create AI-generated images on social media by simply holding or using BUDDY tokens, you can access tools for generating unique, creative memes and images that can enhance your social media presence. 
   It’s designed to combine the power of AI with the creativity of meme culture!
 
-  Simply participate in our weekly Twitter Space by BUDDY. Engage in the conversation, or just say hi for the rewards, and share your thoughts on BUZZUP and the BUDDY token. Capture your participation and submit proof to earn rewards.
+  Simply participate in our weekly Twitter Space by BUDDY. Engage in the conversation, or just say hi for the rewards, and share your thoughts on DOTFI and the BUDDY token. Capture your participation and submit proof to earn rewards.
 
   Rewards:
   1000 $BUZZ

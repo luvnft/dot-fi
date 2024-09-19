@@ -259,7 +259,7 @@ export function NewLayout({ children }) {
               className="flex items-center gap-2 font-semibold"
             >
               {/* <Package2 className="h-6 w-6" /> */}
-              <span className="">BUZZUP</span>
+              <span className="">DOTFI</span>
             </RouterLink>
             {/* <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
@@ -327,7 +327,7 @@ export function NewLayout({ children }) {
                   className="flex items-center gap-2 text-lg font-semibold mb-4"
                 >
                   {/* <Package2 className="h-6 w-6" /> */}
-                  <span className="sr-only">BUZZUP</span>
+                  <span className="sr-only">DOTFI</span>
                 </RouterLink>
 
                 {LIST_MENU?.map((item, i) => (

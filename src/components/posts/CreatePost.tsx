@@ -106,7 +106,7 @@ export default function CreatePost() {
         style={{ flexGrow: 1 }}
         className="w-full cursor-pointer"
       >
-        <RouterLink to="/create">Post Hive</RouterLink>
+        <RouterLink to="/create">Create</RouterLink>
       </Button>
     </div>
   );

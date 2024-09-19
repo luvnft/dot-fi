@@ -45,7 +45,7 @@ export function Dashboard02() {
               className="flex items-center gap-2 font-semibold"
             >
               {/* <Package2 className="h-6 w-6" /> */}
-              <span className="">BUZZUP</span>
+              <span className="">DOTFI</span>
             </RouterLink>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
